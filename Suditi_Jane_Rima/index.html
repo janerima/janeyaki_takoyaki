@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/0c939a5e14.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Janeyaki</title>
+    <link rel="icon" type="image/x-icon" href="img/janeyaki.png">
+  </head>
+  <body>
+    <div style=" margin-top: 115px;" class="menu-btn" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+      <div class="side-bar">
+        <div class="close-btn" onclick="toggleSidebar()">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <div class="menu">
+          <div class="item">
+            <a href="index.html"><i class="fa-solid fa-house"></i>Beranda</a>
+          </div>
+          <div class="item">
+            <a href="promosi.html"><i class="fa-solid fa-tag"></i>Promosi dan Berita</a>
+          </div>
+          <div class="item">
+            <a href="kontak.html"><i class="fa-solid fa-map-location-dot"></i>Lokasi</a>
+          </div>
+          <div class="item">
+            <a href="keranjang.html"><i class="fa-solid fa-cart-shopping"></i>Keranjang Belanja</a>
+          </div>
+          <div style="margin-top: 170px;" class="clock-container">
+            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+            <div id="period" class="period"></div>
+          </div>
+           <img style="margin-top: 90px;" id="karaoke-mic" src="img/gojo2.png" alt="Karaoke Mic" />
+
+    <!-- Audio yang akan diputar -->
+    <audio id="background-music" loop>
+      <source src="img/jujutsu.mp3" type="audio/mpeg" />
+    </audio>
+        </div>
+      </div>
+      <header style="position: fixed;">
+        <div class="logo-container">
+          <a href="index.html"> <img src="img/janeyaki.png" alt="Logo" /></a>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search..." />
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          <p class="search-label">Cari tentang kami</p>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li>
+              <a href="#">Tentang<i class="fa-solid fa-caret-down"></i></a>
+              <ul>
+                <li><a href="profilkami.html">Profil Kami</a></li>
+                <li><a href="resepkami.html">Resep Kami</a></li>
+                <li><a href="proses.html">Proses Pembuatan</a></li>
+              </ul>
+            </li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="promosi.html">Promosi & Berita</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </nav>
+        <div class="social-icons">
+          <a href="https://wa.me/qr/D266FKUW3P4GP1"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://instagram.com/rimmm19_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/SJanerima?t=JxWYDjZbLyonY3u7JNQaQQ&s=09"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="user.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+      </header>
+      <div id="judul"></div>
+      <div class="slideshow-container">
+        <div class="slide fade1">
+          <img src="img/takoyaki.jpg" alt="Gambar 1" />
+        </div>
+        <div class="slide fade2">
+          <img src="img/jujutsu3.png" alt="Gambar 2" />
+        </div>
+        <div class="slide fade3">
+          <img src="img/V8Losh.webp" alt="Gambar 3" />
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <blockquote>
+        <p>
+          <b
+            ><i>
+              "Takoyaki lokal gak kalah enak sama yang di Jepang
+              loh!!!"</i
+            ></b
+          ><br />
+          <span>By : Suditi Jane Rima</span>
+        </p>
+      </blockquote>
+      <div class="takoyaki">
+        <p>
+          Sejarah Janeyaki, toko takoyaki ini, 
+          bermula dari kecintaan saya terhadap makanan lezat ini dan panggilan akrab saya, 
+          Jane. Sejak kecil, saya gemar menikmati takoyaki, hingga pada usia 20 tahun, bersama tim, 
+          kami memutuskan untuk merintis toko ini. Dengan dedikasi kami, Janeyaki terlahir, 
+          menawarkan beragam jenis takoyaki yang lezat.
+        </p>
+      </div>
+      <div class="label">
+        <div class="label-content">
+          <center>
+            <h1>Kreasikan Momen Spesial Kamu dengan Janeyaki!</h1>
+            <br />
+            <p>Selamat datang di petualangan rasa kami, di mana kami mengundang Anda 
+              untuk menjelajahi kelezatan Takoyaki Pilihan Kami yang akan menghadirkan 
+              keseruan kuliner Jepang ke dalam setiap momen kehidupan Anda. 
+              Segera temukan bagaimana setiap gigitan takoyaki kami membawa Anda dalam
+               perjalanan rasa yang tidak hanya lezat, tetapi juga memenuhi hati dengan
+              kehangatan yang tak terlupakan. Dibalut dengan rahasia resep otentik dengan khas 
+              lokal, yang membangkitkan
+              akan cita rasa autentik. Dibuat dengan cinta dan dedikasi, setiap bola 
+              takoyaki adalah karya seni kuliner yang membawa Anda lebih dekat dengan budaya 
+              makanan Jepang dan Indonesia.
+            </p>
+            <p>
+              Keunggulan produk kami tidak hanya terletak pada cita rasa yang menggugah selera, 
+              tetapi juga pada pemilihan bahan berkualitas tinggi yang kami gunakan. 
+              Kami menghadirkan takoyaki dengan tekstur yang sempurna, diisi dengan 
+              potongan gurita yang lembut dan bumbu rahasia yang memukau lidah Anda.
+            </p>
+            <br>
+            <h2>'' Oishii Sugu ''</h2>
+          </center>
+          <img src="img/tiker.png" alt="stiker" />
+        </div>
+      </div>
+      <div class="jepun">
+        <h1>~たこ焼き~</h1>
+      </div>
+
+      <div class="video-container">
+        <h1>JANEYAKI<br />じゃれ焼き</h1>
+        <h2>"Kami menjalin kolaborasi yang mengagumkan dengan seorang YouTuber terkemuka dari Jepang, 
+          <br> menghadirkan dedikasi penuh untuk mengungkapkan keahlian dalam seni menciptakan takoyaki. 
+          <br> Untuk menginspirasi dan menyentuh hati sebanyak mungkin orang dengan keajaiban kuliner ini."</h2>
+        <iframe
+          src="https://www.youtube.com/embed/eK6YSiQaz4w?si=edwFPpf00ITX2Oa3"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+
+        <iframe
+          src="https://www.youtube.com/embed/vlDbPSqfKNs?si=5l16QJyp0PB41gVh"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <br />
+        <a href="https://www.youtube.com/embed/eK6YSiQaz4w?si=edwFPpf00ITX2Oa3"
+          >Lihat Selengkapnya</a
+        >
+      </div>
+      <section id="tranding">
+        <div class="container">
+          <h3 class="text-center section-subheading">- Paling Recommended -</h3>
+          <h1 class="text-center section-heading">Yuk Cobain !</h1>
+        </div>
+        <div class="container">
+          <div class="swiper tranding-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="img/1 (1).jpeg" alt="Tranding" />
+                </div>
+                <div class="tranding-slide-content">
+                  <h1 class="food-price">18k</h1>
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">Original Tako</h2>
+                    <h3 class="food-rating">
+                      <span>4</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3>
+                    <button style="margin-left: 220px;"  class="add-to-cart-btn" onclick="addToCart('Original Tako', '18K')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="img/1 (2).jpeg" alt="Tranding" />
+                </div>
+                <div class="tranding-slide-content">
+                  <h1 class="food-price">24k</h1>
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">Tako Sour Spicy</h2>
+                    <h3 class="food-rating">
+                      <span>5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3>
+                    <button style="margin-left: 220px;" class="add-to-cart-btn" onclick="addToCart('Tako Sour Spicy', '24K')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="img/1 (3).jpeg" alt="Tranding" />
+                </div>
+                <div class="tranding-slide-content">
+                  <h1 class="food-price">25k</h1>
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">Tako Tobiko</h2>
+                    <h3 class="food-rating">
+                      <span>5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3>
+                    <button style="margin-left: 220px;" class="add-to-cart-btn" onclick="addToCart('Tako Tobiko', '25K')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="img/1 (4).jpeg" alt="Tranding" />
+                </div>
+                <div class="tranding-slide-content">
+                  <h1 class="food-price">28k</h1>
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">Inferno Spiciyaki</h2>
+                    <h3 class="food-rating">
+                      <span>4</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3>
+                    <button style="margin-left: 220px;" class="add-to-cart-btn" onclick="addToCart('Inferno Spiciyaki', '28K')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="img/1 (5).jpeg" alt="Tranding" />
+                </div>
+                <div class="tranding-slide-content">
+                  <h1 class="food-price">30K</h1>
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">Mozzayaki Melted</h2>
+                    <h3 class="food-rating">
+                      <span>5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3>
+                    <button style="margin-left: 220px;" class="add-to-cart-btn" onclick="addToCart('Mozzayaki Melted', '30K')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="img/1 (6).jpeg" alt="Tranding" />
+                </div>
+                <div class="tranding-slide-content">
+                  <h1 class="food-price">26K</h1>
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">Mentaiko Cheese</h2>
+                    <h3 class="food-rating">
+                      <span>4</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3>
+                    <button style="margin-left: 220px;" class="add-to-cart-btn" onclick="addToCart('Mentaiko Cheese', '26K')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  <img src="img/1 (10).jpeg" alt="Tranding" />
+                </div>
+                <div class="tranding-slide-content">
+                  <h1 class="food-price">27K</h1>
+                  <div class="tranding-slide-content-bottom">
+                    <h2 class="food-name">Creamiyaki Delight Fusion</h2>
+                    <h3 class="food-rating">
+                      <span>5</span>
+                      <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    </h3>
+                    <button class="add-to-cart-btn" onclick="addToCart('Creamiyaki Delight Fusion', '27K')">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tranding-slider-control">
+              <div class="swiper-button-prev slider-arrow">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+              </div>
+              <div class="swiper-button-next slider-arrow">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <a id="back-to-top" href="#">
+      <img src="img/top.png" alt="Kembali ke Atas" />
+    </a>
+    <footer>
+      <div class="footer-content">
+        <h1>~たこ焼き~</h1>
+        <p>
+          Kami membuat Takoyaki menggunakan bahan pilihan yang berkualitas, higenis dan 100% Halal. 
+          Sehingga aman dikonsumsi oleh berbagai kalangan usia.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="https://wa.me/qr/D266FKUW3P4GP1"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://x.com/SJanerima?t=JxWYDjZbLyonY3u7JNQaQQ&s=09"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/rimmm19_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://t.me/Janerima"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/suditi-jane-rima-7678a9223"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Copyright &copy <span id="year"></span> <a href="#">Janeyaki</a> <scrip type="text/javascript">
+        </p>
+        <div class="footer-menu">
+          <ul class="f-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profilkami.html">Tentang</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+function addToCart(productName, productPrice) {
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  cartItems.push({ name: productName, price: productPrice });
+  localStorage.setItem('cart', JSON.stringify(cartItems));
+
+ 
+  alert('Produk berhasil ditambahkan ke keranjang!');
+  
+
+  updateCartCount();
+}
+    </script>
+  </body>
+</html>

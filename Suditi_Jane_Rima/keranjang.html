@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #cart-container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        width: 400px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #cart-items {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cart-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        width: 100%;
+        background-color: #fff;
+      }
+
+      .cart-item .item-info {
+        flex-grow: 1;
+        margin-left: 30px;
+      }
+
+      .delete-btn,
+      .checkout-btn {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        margin-top: 10px;
+      }
+
+      .checkout-container {
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .checkout-container label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      #total-price {
+        font-weight: bold;
+      }
+
+      #checkout-btn {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        margin-top: 10px;
+      }
+
+      .checkbox-container {
+        margin-left: 10px;
+      }
+
+      .checkbox-container input {
+        margin-right: 5px;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/0c939a5e14.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Janeyaki</title>
+    <link rel="icon" type="image/x-icon" href="img/janeyaki.png" />
+  </head>
+  <body>
+    <div style="margin-top: -35px" class="menu-btn" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="side-bar">
+      <div class="close-btn" onclick="toggleSidebar()">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </div>
+      <div class="menu">
+        <div class="item">
+          <a href="index.html"><i class="fa-solid fa-house"></i>Beranda</a>
+        </div>
+        <div class="item">
+          <a href="promosi.html"
+            ><i class="fa-solid fa-tag"></i>Promosi dan Berita</a
+          >
+        </div>
+        <div class="item">
+          <a href="kontak.html"
+            ><i class="fa-solid fa-map-location-dot"></i>Lokasi</a
+          >
+        </div>
+        <div class="item">
+          <a href="keranjang.html"
+            ><i class="fa-solid fa-cart-shopping"></i>Keranjang Belanja</a
+          >
+        </div>
+        <div style="margin-top: 170px" class="clock-container">
+          <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+          <div id="period" class="period"></div>
+        </div>
+        <img
+          style="margin-top: 90px"
+          id="karaoke-mic"
+          src="img/gojo2.png"
+          alt="Karaoke Mic"
+        />
+
+        <!-- Audio -->
+        <audio id="background-music" loop>
+          <source src="img/jujutsu.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+    <header style="position: fixed">
+      <div class="logo-container">
+        <a href="index.html"> <img src="img/janeyaki.png" alt="Logo" /></a>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <p class="search-label">Cari tentang kami</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li>
+            <a href="#">Tentang<i class="fa-solid fa-caret-down"></i></a>
+            <ul>
+              <li><a href="profilkami.html">Profil Kami</a></li>
+              <li><a href="resepkami.html">Resep Kami</a></li>
+              <li><a href="proses.html">Proses Pembuatan</a></li>
+            </ul>
+          </li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="promosi.html">Promosi & Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://wa.me/qr/D266FKUW3P4GP1"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://instagram.com/rimmm19_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://x.com/SJanerima?t=JxWYDjZbLyonY3u7JNQaQQ&s=09"
+          ><i class="fa-brands fa-x-twitter"></i
+        ></a>
+        <a href="user.html"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </header>
+    <div class="container-about">
+      <div class="media">
+        <div class="media-info">
+          <h1>Keranjang Belanja</h1>
+          <br />
+          <hr />
+          <span>Janeyaki</span>
+        </div>
+      </div>
+      <div class="content1">
+        <div class="opening">
+          <h3>Pesanan</h3>
+          <ul id="cart-items"></ul>
+          <div class="checkout-container">
+            <label for="checkout">Checkout:</label>
+            <div id="total-price">Total: 0</div>
+            <button id="checkout-btn" onclick="checkout()">Checkout</button>
+          </div>
+        </div>
+        <div id="form">
+          <form></form>
+        </div>
+      </div>
+    </div>
+    <a id="back-to-top" href="#">
+      <img src="img/top.png" alt="Kembali ke Atas" />
+    </a>
+    <footer>
+      <div class="footer-content">
+        <h1>~たこ焼き~</h1>
+        <p>
+          Kami membuat Takoyaki menggunakan bahan pilihan yang berkualitas,
+          higenis dan 100% Halal. Sehingga aman dikonsumsi oleh berbagai
+          kalangan usia.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="https://wa.me/qr/D266FKUW3P4GP1"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://x.com/SJanerima?t=JxWYDjZbLyonY3u7JNQaQQ&s=09"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/rimmm19_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://t.me/Janerima"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/suditi-jane-rima-7678a9223"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy <span id="year"></span> <a href="#">Janeyaki</a></p>
+        <div class="footer-menu">
+          <ul class="f-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profilkami.html">Tentang</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function formatRupiah(angka) {
+        var reverse = angka.toString().split("").reverse().join(""),
+          ribuan = reverse.match(/\d{1,3}/g);
+        ribuan = ribuan.join(".").split("").reverse().join("");
+        return "Rp " + ribuan + ".000";
+      }
+
+      function addToCart(productName, productPrice) {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        cartItems.push({
+          name: productName,
+          price: productPrice,
+          checked: false,
+        });
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+
+        alert("Produk berhasil ditambahkan ke keranjang!");
+
+        updateCartCount();
+
+        displayCartItems();
+      }
+
+      function displayCartItems() {
+        const cartItemsContainer = document.getElementById("cart-items");
+        cartItemsContainer.innerHTML = "";
+
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function getProductImage(productName) {
+          const imageName = productName.replace(/\s+/g, ""); // Hapus spasi dari nama produk
+        }
+        cartItems.forEach((item, index) => {
+          const listItem = document.createElement("li");
+          listItem.className = "cart-item";
+
+          const checkboxContainer = document.createElement("div");
+          checkboxContainer.className = "checkbox-container";
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = item.checked;
+          checkbox.onchange = () => toggleCheckbox(index);
+          checkboxContainer.appendChild(checkbox);
+
+          listItem.appendChild(checkboxContainer);
+
+          const itemInfo = document.createElement("div");
+          itemInfo.className = "item-info";
+
+          const productName = document.createElement("h3");
+          productName.textContent = item.name;
+          itemInfo.appendChild(productName);
+
+          const productPrice = document.createElement("p");
+          productPrice.textContent = formatRupiah(item.price);
+          itemInfo.appendChild(productPrice);
+
+          listItem.appendChild(itemInfo);
+
+          // Tambahkan tombol delete
+          const deleteBtn = document.createElement("button");
+          deleteBtn.className = "delete-btn";
+          deleteBtn.textContent = "Delete";
+          deleteBtn.onclick = () => deleteItem(index);
+          listItem.appendChild(deleteBtn);
+
+          cartItemsContainer.appendChild(listItem);
+        });
+
+        // Perbarui total harga
+        updateTotalPrice();
+      }
+
+      function deleteItem(index) {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        cartItems.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+
+        // Tampilkan pesan sukses
+        alert("Produk berhasil dihapus dari keranjang!");
+
+        // Perbarui tampilan jumlah di tombol
+        updateCartCount();
+
+        // Tampilkan produk di keranjang
+        displayCartItems();
+      }
+
+      function toggleCheckbox(index) {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        cartItems[index].checked = !cartItems[index].checked;
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+
+        // Perbarui total harga
+        updateTotalPrice();
+      }
+
+      function checkout() {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        const selectedItems = cartItems.filter((item) => item.checked);
+
+        if (selectedItems.length === 0) {
+          alert("Pilih setidaknya satu item untuk checkout.");
+          return;
+        }
+
+        // Hitung total harga
+        let totalPrice = 0;
+        selectedItems.forEach((item) => {
+          totalPrice += parseInt(item.price);
+        });
+
+        // Konfirmasi checkout
+        const formattedPrice = formatRupiah(totalPrice);
+        const confirmation = confirm(
+          `Total harga: ${formattedPrice}. Apakah Anda yakin ingin checkout?`
+        );
+
+        if (confirmation) {
+          // Proses checkout
+          alert("Terima kasih telah berbelanja!");
+          // Kosongkan keranjang
+          localStorage.removeItem("cart");
+          // Perbarui tampilan jumlah di tombol
+          updateCartCount();
+          // Tampilkan produk di keranjang
+          displayCartItems();
+        }
+      }
+
+      function updateTotalPrice() {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalPrice = 0;
+
+        cartItems.forEach((item) => {
+          if (item.checked) {
+            totalPrice += parseInt(item.price);
+          }
+        });
+
+        const formattedPrice = formatRupiah(totalPrice);
+        document.getElementById(
+          "total-price"
+        ).textContent = `Total: ${formattedPrice}`;
+      }
+
+      function updateCartCount() {
+        // Logika perbarui jumlah di tombol
+      }
+
+      // Panggil fungsi saat halaman dimuat
+      displayCartItems();
+    </script>
+  </body>
+</html>

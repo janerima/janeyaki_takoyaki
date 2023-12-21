@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/0c939a5e14.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Janeyaki</title>
+    <link rel="icon" type="image/x-icon" href="img/janeyaki.png" />
+  </head>
+  <body>
+    <div style="margin-top: -35px" class="menu-btn" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="side-bar">
+      <div class="close-btn" onclick="toggleSidebar()">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </div>
+      <div class="menu">
+        <div class="item">
+          <a href="index.html"><i class="fa-solid fa-house"></i>Beranda</a>
+        </div>
+        <div class="item">
+          <a href="promosi.html"
+            ><i class="fa-solid fa-tag"></i>Promosi dan Berita</a
+          >
+        </div>
+        <div class="item">
+          <a href="kontak.html"
+            ><i class="fa-solid fa-map-location-dot"></i>Lokasi</a
+          >
+        </div>
+        <div class="item">
+          <a href="keranjang.html"
+            ><i class="fa-solid fa-cart-shopping"></i>Keranjang Belanja</a
+          >
+        </div>
+        <div style="margin-top: 170px" class="clock-container">
+          <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+          <div id="period" class="period"></div>
+        </div>
+        <img
+          style="margin-top: 90px"
+          id="karaoke-mic"
+          src="img/gojo2.png"
+          alt="Karaoke Mic"
+        />
+
+        <!-- Audio -->
+        <audio id="background-music" loop>
+          <source src="img/jujutsu.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+    <header style="position: fixed">
+      <div class="logo-container">
+        <a href="index.html"> <img src="img/janeyaki.png" alt="Logo" /></a>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <p class="search-label">Cari tentang kami</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li>
+            <a href="#">Tentang<i class="fa-solid fa-caret-down"></i></a>
+            <ul>
+              <li><a href="profilkami.html">Profil Kami</a></li>
+              <li><a href="resepkami.html">Resep Kami</a></li>
+              <li><a href="proses.html">Proses Pembuatan</a></li>
+            </ul>
+          </li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="promosi.html">Promosi & Berita</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://wa.me/qr/D266FKUW3P4GP1"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://instagram.com/rimmm19_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://x.com/SJanerima?t=JxWYDjZbLyonY3u7JNQaQQ&s=09"
+          ><i class="fa-brands fa-x-twitter"></i
+        ></a>
+        <a href="user.html"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </header>
+    <div class="container-about">
+      <div class="media">
+        <div class="media-info">
+          <h1>Promosi dan Berita</h1>
+          <br />
+          <hr />
+          <span>Janeyaki</span>
+        </div>
+      </div>
+      <div class="content1">
+        <div class="opening">
+          <img src="img/poster.jpg" alt="poster" />
+          <h3>Special Jum'at Berkah😊🤲</h3>
+          <p>
+            🎉 Janeyaki menghadirkan penawaran spesial yang tidak boleh Anda
+            lewatkan! Nikmati kelezatan takoyaki kami 🍡 hanya dengan 15 Ribu.
+            Takoyaki kami dibuat dengan bahan-bahan berkualitas tinggi dan
+            dimasak dengan penuh cinta dan perhatian. 💖 Dengan saus mayones dan
+            taburan daun bawang di atasnya, takoyaki kami akan memanjakan lidah
+            Anda dengan rasa yang luar biasa. 😋
+          </p>
+          <br />
+          <p>
+            Penawaran ini hanya berlaku pada hari Jumat, jadi pastikan Anda
+            tidak melewatkannya! 📅 Yukk di order dan rasakan sensasi takoyaki
+            kami yang lezat. Ingat, penawaran ini hanya berlaku untuk waktu yang
+            terbatas. ⏳ Jadi, tunggu apa lagi? Pesan sekarang dan nikmati
+            takoyaki kami yang lezat!" 🍽️
+          </p>
+          <br />
+          <img src="img/voucher.jpg" alt="poster" />
+          <h3 style="margin-top: 20px">Special Voucher🥳</h3>
+          <p>
+            🎉 Janeyaki mengundang Anda untuk merayakan tahun baru dengan
+            penawaran spesial kami! Mulailah tahun 2024 dengan sensasi rasa yang
+            luar biasa dari Tako Meatball kami. Dengan bumbu yang diracik dengan
+            hati dan daging yang lembut, Tako Meatball kami akan memanjakan
+            lidah Anda dan membuat Anda kembali lagi dan lagi. 😋
+          </p>
+          <br />
+          <p>
+            📅 Penawaran ini berlaku dari 1 hingga 19 Januari 2024. Jadi, jangan
+            lewatkan kesempatan ini! Dengan minimal pembelian 100K, Anda bisa
+            mendapatkan diskon 20% untuk Tako Meatball. Bayangkan, Anda bisa
+            menikmati kelezatan Tako Meatball dengan harga yang lebih hemat! 💰
+          </p>
+          <br />
+          <p>
+            🍽️ Jadi, tunggu apa lagi? Datang dan kunjungi Janeyaki, tempat di
+            mana rasa bertemu dengan kualitas. Kami berharap dapat melayani Anda
+            dan memberikan Anda pengalaman makan yang tak terlupakan. Sampai
+            jumpa di Janeyaki! 🥳
+          </p>
+          <img
+            style="margin-top: 45px !important"
+            src="img/jujutsu3.png"
+            alt="poster"
+          />
+          <h3 style="margin-top: 20px">Special Edisi Jujutsu Kaisen🤩😎</h3>
+          <p>
+            🎉 Janeyaki dengan bangga mengumumkan kolaborasi spesial dengan
+            Jujutsu Kaisen! Mulai tanggal 19 hingga 25 Januari 2024, setiap
+            pembelian di Janeyaki akan mendapatkan gantungan kunci gurita dan
+            Jujutsu Kaisen gratis. 🎁 Gantungan kunci ini menampilkan
+            karakter-karakter favorit Anda dari Jujutsu Kaisen, menjadikannya
+            hadiah yang sempurna untuk diri Anda sendiri atau teman-teman Anda
+            yang juga penggemar Jujutsu Kaisen. 🎊
+          </p>
+          <br />
+          <p>
+            Tidak hanya itu, kami juga menawarkan kartu Jujutsu Kaisen yang bisa
+            Anda kumpulkan. 🃏 Setiap kartu menampilkan ilustrasi karakter
+            Jujutsu Kaisen yang menarik, membuatnya menjadi tambahan yang
+            sempurna untuk koleksi Anda. Jadi, jangan lewatkan kesempatan ini
+            untuk menambah koleksi Anda dengan kartu-kartu ini. 🌟
+          </p>
+          <br />
+          <p>
+            Jangan sampai terlewatkan! Kunjungi Janeyaki antara tanggal 19
+            hingga 25 Januari 2024 dan nikmati lezatnya menu kami sambil
+            mendapatkan gantungan kunci dan kartu Jujutsu Kaisen. 🍽️ Kami tidak
+            sabar untuk menyambut Anda di Janeyaki! 🥳
+          </p>
+        </div>
+      </div>
+      <div id="form">
+        <form></form>
+      </div>
+    </div>
+    <a id="back-to-top" href="#">
+      <img src="img/top.png" alt="Kembali ke Atas" />
+    </a>
+    <footer>
+      <div class="footer-content">
+        <h1>~たこ焼き~</h1>
+        <p>
+          Kami membuat Takoyaki menggunakan bahan pilihan yang berkualitas,
+          higenis dan 100% Halal. Sehingga aman dikonsumsi oleh berbagai
+          kalangan usia.
+        </p>
+        <ul class="socials">
+          <li>
+            <a href="https://wa.me/qr/D266FKUW3P4GP1"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://x.com/SJanerima?t=JxWYDjZbLyonY3u7JNQaQQ&s=09"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/rimmm19_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://t.me/Janerima"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/suditi-jane-rima-7678a9223"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy <span id="year"></span> <a href="#">Janeyaki</a></p>
+        <div class="footer-menu">
+          <ul class="f-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profilkami.html">Tentang</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
